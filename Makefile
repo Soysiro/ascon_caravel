@@ -92,6 +92,9 @@ ifeq ($(PDK),gf180mcuD)
 
 endif
 
+.PHONY: precheck_ascon
+	make precheck
+	DISABLE_LVS=1 make run-precheck
 # Include Caravel Makefile Targets
 .PHONY: % : check-caravel
 %:
